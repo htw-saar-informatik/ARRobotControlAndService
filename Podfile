@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+  pod 'FirebaseUI/Database'
+# platform :ios, '9.0'
+
+target 'Augmented Reality' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AR-Robotersteuerung
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI/Auth', '~> 5.0'
+  pod 'GoogleSignIn'
+  pod 'SVProgressHUD'
+  pod 'Kingfisher', '~> 4.0'
+  pod 'Firebase/Firestore'
+  pod 'SwiftMessages'
+  pod 'FirebaseUI/Database'
+  pod 'Presentr'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'DZNEmptyDataSet'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod "InitialsImageView"
+  pod 'Alamofire', '~> 4.7'
+  pod 'ASHorizontalScrollView'
+end
