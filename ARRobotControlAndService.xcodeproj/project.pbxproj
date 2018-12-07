@@ -14,6 +14,11 @@
 		741FCCF221B9233900DA621E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF121B9233900DA621E /* Assets.xcassets */; };
 		741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF321B9233900DA621E /* LaunchScreen.storyboard */; };
 		74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */; };
+		74AAA5DF21BA66B200FF10EC /* ViewController + UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */; };
+		74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E121BA67EA00FF10EC /* Roboter.swift */; };
+		74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */; };
+		74AAA5E721BA69F800FF10EC /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */; };
+		74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */; };
 		F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +32,11 @@
 		741FCCF421B9233900DA621E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		741FCCF621B9233900DA621E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + UiViewController.swift"; sourceTree = "<group>"; };
+		74AAA5E121BA67EA00FF10EC /* Roboter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roboter.swift; sourceTree = "<group>"; };
+		74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErzeugeSCNNode.swift; sourceTree = "<group>"; };
 		A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.release.xcconfig"; sourceTree = "<group>"; };
 		C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARRobotControlAndService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,9 +92,11 @@
 		741FCCE721B9233600DA621E /* ARRobotControlAndService */ = {
 			isa = PBXGroup;
 			children = (
+				74AAA5E521BA69E500FF10EC /* Utility */,
+				74AAA5E021BA67DC00FF10EC /* Model */,
+				74AAA5DC21BA661000FF10EC /* View Controller */,
 				741FCCE821B9233600DA621E /* AppDelegate.swift */,
 				741FCCEA21B9233600DA621E /* art.scnassets */,
-				741FCCEC21B9233600DA621E /* ViewController.swift */,
 				741FCCEE21B9233600DA621E /* Main.storyboard */,
 				741FCCF121B9233900DA621E /* Assets.xcassets */,
 				741FCCF321B9233900DA621E /* LaunchScreen.storyboard */,
@@ -92,6 +104,41 @@
 				74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */,
 			);
 			path = ARRobotControlAndService;
+			sourceTree = "<group>";
+		};
+		74AAA5DC21BA661000FF10EC /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA5DD21BA664700FF10EC /* AR Controller */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		74AAA5DD21BA664700FF10EC /* AR Controller */ = {
+			isa = PBXGroup;
+			children = (
+				741FCCEC21B9233600DA621E /* ViewController.swift */,
+				74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */,
+				74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */,
+			);
+			path = "AR Controller";
+			sourceTree = "<group>";
+		};
+		74AAA5E021BA67DC00FF10EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA5E121BA67EA00FF10EC /* Roboter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74AAA5E521BA69E500FF10EC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */,
+				74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */,
 				741FCCED21B9233600DA621E /* ViewController.swift in Sources */,
+				74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */,
+				74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */,
+				74AAA5DF21BA66B200FF10EC /* ViewController + UiViewController.swift in Sources */,
+				74AAA5E721BA69F800FF10EC /* FirebaseHelper.swift in Sources */,
 				741FCCE921B9233600DA621E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
