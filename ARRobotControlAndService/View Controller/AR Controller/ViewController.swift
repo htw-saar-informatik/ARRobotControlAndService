@@ -13,8 +13,7 @@ import ARKit
 class ViewController: UIViewController{
 
     @IBOutlet var sceneView: ARSCNView!
-    
-    var tableView = UITableView(frame: CGRect(x:0, y: 1, width:300, height: 400))
+    @IBOutlet weak var tableView: UITableView!
     let erzeugeSCNNode = ErzeugeSCNNode()
     var anzeige:Bool = false
     var document = [Roboter]()
@@ -27,22 +26,22 @@ class ViewController: UIViewController{
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        loadData()
+        checkForUpdates()
+        tableView.dataSource = self
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
+        
         let configuration = ARWorldTrackingConfiguration()
-
-        // Run the view's session
-        sceneView.session.run(configuration)
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
