@@ -19,6 +19,10 @@
 		74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */; };
 		74AAA5E721BA69F800FF10EC /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */; };
 		74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */; };
+		74AAA5EB21BA6E4B00FF10EC /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5EA21BA6E4B00FF10EC /* AuthenticationController.swift */; };
+		74AAA5ED21BA6E8100FF10EC /* NotificationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5EC21BA6E8100FF10EC /* NotificationUtility.swift */; };
+		74AAA5EF21BA6EA200FF10EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5EE21BA6EA200FF10EC /* User.swift */; };
+		74AAA5F121BA74BA00FF10EC /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5F021BA74BA00FF10EC /* Me.swift */; };
 		F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErzeugeSCNNode.swift; sourceTree = "<group>"; };
+		74AAA5EA21BA6E4B00FF10EC /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		74AAA5EC21BA6E8100FF10EC /* NotificationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtility.swift; sourceTree = "<group>"; };
+		74AAA5EE21BA6EA200FF10EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74AAA5F021BA74BA00FF10EC /* Me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
 		A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.release.xcconfig"; sourceTree = "<group>"; };
 		C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARRobotControlAndService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				74AAA5E121BA67EA00FF10EC /* Roboter.swift */,
+				74AAA5EE21BA6EA200FF10EC /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +146,9 @@
 			children = (
 				74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */,
 				74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */,
+				74AAA5EA21BA6E4B00FF10EC /* AuthenticationController.swift */,
+				74AAA5EC21BA6E8100FF10EC /* NotificationUtility.swift */,
+				74AAA5F021BA74BA00FF10EC /* Me.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -328,12 +340,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AAA5F121BA74BA00FF10EC /* Me.swift in Sources */,
 				74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */,
 				741FCCED21B9233600DA621E /* ViewController.swift in Sources */,
 				74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */,
 				74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */,
+				74AAA5ED21BA6E8100FF10EC /* NotificationUtility.swift in Sources */,
 				74AAA5DF21BA66B200FF10EC /* ViewController + UiViewController.swift in Sources */,
+				74AAA5EB21BA6E4B00FF10EC /* AuthenticationController.swift in Sources */,
 				74AAA5E721BA69F800FF10EC /* FirebaseHelper.swift in Sources */,
+				74AAA5EF21BA6EA200FF10EC /* User.swift in Sources */,
 				741FCCE921B9233600DA621E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
