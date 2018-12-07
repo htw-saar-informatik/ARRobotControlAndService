@@ -14,7 +14,7 @@ import FirebaseMessaging
 struct AuthenticationController{
     
     // registers a new user with the specified data
-    static func registerUser(withName: String, email: String, password: String, completion: @escaping (User?) -> Swift.Void) {
+    static func registerUser( email: String, password: String, completion: @escaping (User?) -> Swift.Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 guard let user = user else{
