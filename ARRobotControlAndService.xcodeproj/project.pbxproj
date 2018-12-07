@@ -13,6 +13,8 @@
 		741FCCF021B9233600DA621E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCEE21B9233600DA621E /* Main.storyboard */; };
 		741FCCF221B9233900DA621E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF121B9233900DA621E /* Assets.xcassets */; };
 		741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF321B9233900DA621E /* LaunchScreen.storyboard */; };
+		74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */; };
+		F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		741FCCF121B9233900DA621E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741FCCF421B9233900DA621E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		741FCCF621B9233900DA621E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.release.xcconfig"; sourceTree = "<group>"; };
+		C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARRobotControlAndService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0165DDF400089CA89624697D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18E80337B45C7B78D77C8177 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */,
+				A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		741FCCDC21B9233600DA621E = {
 			isa = PBXGroup;
 			children = (
 				741FCCE721B9233600DA621E /* ARRobotControlAndService */,
 				741FCCE621B9233600DA621E /* Products */,
+				18E80337B45C7B78D77C8177 /* Pods */,
+				0165DDF400089CA89624697D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				741FCCF121B9233900DA621E /* Assets.xcassets */,
 				741FCCF321B9233900DA621E /* LaunchScreen.storyboard */,
 				741FCCF621B9233900DA621E /* Info.plist */,
+				74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */,
 			);
 			path = ARRobotControlAndService;
 			sourceTree = "<group>";
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 741FCCF921B9233900DA621E /* Build configuration list for PBXNativeTarget "ARRobotControlAndService" */;
 			buildPhases = (
+				1990306804E8FFAEAF041C2D /* [CP] Check Pods Manifest.lock */,
 				741FCCE121B9233600DA621E /* Sources */,
 				741FCCE221B9233600DA621E /* Frameworks */,
 				741FCCE321B9233600DA621E /* Resources */,
+				E0CFD7AD5BB1FC940DD99193 /* [CP] Embed Pods Frameworks */,
+				5EAED2015D2F0CE0937734CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,12 +157,124 @@
 			files = (
 				741FCCEB21B9233600DA621E /* art.scnassets in Resources */,
 				741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */,
+				74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */,
 				741FCCF221B9233900DA621E /* Assets.xcassets in Resources */,
 				741FCCF021B9233600DA621E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1990306804E8FFAEAF041C2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARRobotControlAndService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EAED2015D2F0CE0937734CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0CFD7AD5BB1FC940DD99193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ASHorizontalScrollView/ASHorizontalScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/InitialsImageView/InitialsImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASHorizontalScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InitialsImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		741FCCE121B9233600DA621E /* Sources */ = {
@@ -284,6 +426,7 @@
 		};
 		741FCCFA21B9233900DA621E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +445,7 @@
 		};
 		741FCCFB21B9233900DA621E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
