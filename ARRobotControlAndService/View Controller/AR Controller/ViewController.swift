@@ -12,23 +12,28 @@ import ARKit
 
 class ViewController: UIViewController{
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var configButton: UIButton!
+    @IBOutlet weak var profilButton: UIButton!
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tableView: UITableView!
     let erzeugeSCNNode = ErzeugeSCNNode()
     var anzeige:Bool = false
+    var saveUserID:String = ""
     var document = [Roboter]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
+        checkForUpdates()
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = true
+        tableView.dataSource = self
+        uiAnpassung()
         // Set the view's delegate
         sceneView.delegate = self
         
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        loadData()
-        checkForUpdates()
-        tableView.dataSource = self
+
         
     }
     
@@ -116,6 +121,44 @@ class ViewController: UIViewController{
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         
+    }
+    
+    func ladeProfil(){
+        if let userInformation = UserDefaults.standard.dictionary(forKey: "userInformation") {
+            let loginType = userInformation["type"] as! String
+            if loginType == "mail"{
+                saveUserID = userInformation["userid"] as! String
+                let savedEmail = userInformation["email"] as! String
+                let savedPassword = userInformation["password"] as! String
+                AuthenticationController.loginUser(withEmail: savedEmail, password: savedPassword) { [weak weakSelf = self](userId) in
+                    DispatchQueue.main.async {
+                        if let userId = userId, userId == self.saveUserID {
+                        } else {
+                        }
+                    }
+                }
+            }
+        }
+        else{
+            saveUserID = ""
+        }
+    }
+    
+    
+    func uiAnpassung(){
+        ladeProfil()
+        if saveUserID != ""
+        {
+            loginButton.isHidden = true;
+            profilButton.isHidden = false;
+            configButton.isHidden = false;
+        }
+        else
+        {
+            loginButton.isHidden = false
+            profilButton.isHidden = true
+            configButton.isHidden = true
+        }
     }
     
 }

@@ -39,24 +39,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        self.pushTo(viewController: .login)
+       performSegue(withIdentifier: "registerSegue", sender: nil)
     }
     
-    private func pushTo(viewController: ViewControllerType){
-        switch viewController {
-        case .home:
-            performSegue(withIdentifier: "loginSegue", sender: nil)
-        case .login:
-            performSegue(withIdentifier: "registerSegue", sender: nil)
-        }
-    }
     
     private func loginUser(email: String, password: String){
         SVProgressHUD.show(withStatus: "Anmelden..")
         AuthenticationController.loginUser(withEmail: email, password: password) { (userId) in
             if let userId = userId{
                 SVProgressHUD.dismiss()
-                self.pushTo(viewController: .home)
+                self.dismiss(animated: true, completion: nil)
+                self.popoverPresentationController?.delegate?.popoverPresentationControllerDidDismissPopover?(self.popoverPresentationController!)
             }else{
                 SVProgressHUD.dismiss()
             }

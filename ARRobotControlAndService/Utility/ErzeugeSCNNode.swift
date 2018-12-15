@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import ARKit
 
 class ErzeugeSCNNode{
@@ -14,7 +15,7 @@ class ErzeugeSCNNode{
     let heightBigBox = CGFloat(0.75/2)
     let lengthBigBox = CGFloat(0.05)
     
-    func erzeugeSCNNode(imageName:String) -> SCNNode{
+    func erzeugeSCNNode() -> SCNNode{
         
         let tvPlane = SCNPlane(width: widthBigBox, height: heightBigBox)
         
@@ -40,7 +41,6 @@ class ErzeugeSCNNode{
         
         let tvPlaneNode = SCNNode()
         tvPlaneNode.geometry = SCNPlane()
-        tvPlaneNode.name = "node"
         
         //Fügt die Elemente zusammen, so das sie ein Bildschirm ergeben
         frameDown.position = SCNVector3(0 , heightBigBox/2 + 0.025 , 0.025)

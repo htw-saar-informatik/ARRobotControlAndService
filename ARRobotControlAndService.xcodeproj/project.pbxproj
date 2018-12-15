@@ -13,6 +13,7 @@
 		741FCCF021B9233600DA621E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCEE21B9233600DA621E /* Main.storyboard */; };
 		741FCCF221B9233900DA621E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF121B9233900DA621E /* Assets.xcassets */; };
 		741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF321B9233900DA621E /* LaunchScreen.storyboard */; };
+		7478A83C21C4F7DD001E8A92 /* ViewController + Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478A83B21C4F7DD001E8A92 /* ViewController + Actions.swift */; };
 		74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */; };
 		74AAA5DF21BA66B200FF10EC /* ViewController + UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */; };
 		74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E121BA67EA00FF10EC /* Roboter.swift */; };
@@ -43,6 +44,7 @@
 		741FCCF121B9233900DA621E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741FCCF421B9233900DA621E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		741FCCF621B9233900DA621E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7478A83B21C4F7DD001E8A92 /* ViewController + Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Actions.swift"; sourceTree = "<group>"; };
 		74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + UiViewController.swift"; sourceTree = "<group>"; };
 		74AAA5E121BA67EA00FF10EC /* Roboter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roboter.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				741FCCEC21B9233600DA621E /* ViewController.swift */,
 				74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */,
 				74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */,
+				7478A83B21C4F7DD001E8A92 /* ViewController + Actions.swift */,
 			);
 			path = "AR Controller";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7478A83C21C4F7DD001E8A92 /* ViewController + Actions.swift in Sources */,
 				74AAA5F721BA78D100FF10EC /* UIUtility.swift in Sources */,
 				74AAA5F121BA74BA00FF10EC /* Me.swift in Sources */,
 				74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */,

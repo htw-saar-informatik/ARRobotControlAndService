@@ -27,6 +27,7 @@ class ProfilViewController: UIViewController {
         AuthenticationController.logOutUser { (success) in
             if success{
                 self.dismiss(animated: true, completion: nil)
+                self.popoverPresentationController?.delegate?.popoverPresentationControllerDidDismissPopover?(self.popoverPresentationController!)
             }
         }
     }
