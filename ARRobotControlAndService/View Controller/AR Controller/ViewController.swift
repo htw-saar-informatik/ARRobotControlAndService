@@ -35,8 +35,6 @@ class ViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
-        
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
         configuration.detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)
@@ -45,10 +43,10 @@ class ViewController: UIViewController{
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        
+        resetTracking()
         super.viewWillDisappear(animated)
         
-        // Pause the view's session
-        sceneView.session.pause()
     }
 
     // MARK: - ARSCNViewDelegate
@@ -104,4 +102,20 @@ class ViewController: UIViewController{
             })
     }
   
+    func resetTracking()
+    {
+        sceneView.session.pause()
+        sceneView.scene.rootNode.enumerateChildNodes {(node, _) in
+            if node.name == "node"{
+                node.removeFromParentNode()
+            }
+        }
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
+        
+    }
+    
 }

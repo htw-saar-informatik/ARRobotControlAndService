@@ -41,6 +41,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
@@ -48,6 +49,9 @@
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5r8-7r-jod" appends="YES" id="TGd-2Z-fn4"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="AR" id="Gz5-oD-u2V"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -57,6 +61,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="5r8-7r-jod">
+                    <connections>
+                        <action selector="schliessen:" destination="BV1-FR-VrT" id="A79-cn-dCR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1900" y="18.440779610194905"/>
         </scene>
@@ -275,7 +284,7 @@
                                     <action selector="backButtonTapped:" destination="9Gy-Mw-XxH" eventType="touchDown" id="wpo-WJ-0zZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIs-mj-0ZW" customClass="RoundedButton" customModule="Augmented_Reality" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIs-mj-0ZW" customClass="RoundedButton" customModule="ARRobotControlAndService" customModuleProvider="target">
                                 <rect key="frame" x="103" y="318" width="170" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.4039215686" green="0.81960784310000001" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

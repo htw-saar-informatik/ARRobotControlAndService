@@ -40,6 +40,7 @@ class ErzeugeSCNNode{
         
         let tvPlaneNode = SCNNode()
         tvPlaneNode.geometry = SCNPlane()
+        tvPlaneNode.name = "node"
         
         //Fügt die Elemente zusammen, so das sie ein Bildschirm ergeben
         frameDown.position = SCNVector3(0 , heightBigBox/2 + 0.025 , 0.025)
