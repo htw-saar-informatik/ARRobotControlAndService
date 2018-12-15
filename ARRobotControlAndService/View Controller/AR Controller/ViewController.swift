@@ -14,6 +14,9 @@ class ViewController: UIViewController{
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var configButton: UIButton!
+    @IBOutlet var profilButton: UIButton!
     let erzeugeSCNNode = ErzeugeSCNNode()
     var anzeige:Bool = false
     var document = [Roboter]()
