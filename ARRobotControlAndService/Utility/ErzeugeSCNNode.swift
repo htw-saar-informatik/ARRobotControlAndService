@@ -15,7 +15,7 @@ class ErzeugeSCNNode{
     let heightBigBox = CGFloat(0.75/2)
     let lengthBigBox = CGFloat(0.05)
     
-    func erzeugeSCNNode() -> SCNNode{
+    func erzeugeSCNNode(imageName:String) -> SCNNode{
         
         let tvPlane = SCNPlane(width: widthBigBox, height: heightBigBox)
         

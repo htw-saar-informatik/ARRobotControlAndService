@@ -22,7 +22,7 @@
                                 <rect key="frame" x="475" y="679" width="293" height="295"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="293" id="31Y-92-jTs"/>
+                                    <constraint firstAttribute="width" constant="293" id="Tf6-lr-Rk0"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="svM-VH-6bC">
@@ -42,11 +42,11 @@
                                 <rect key="frame" x="0.0" y="20" width="768" height="954"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HD0-Jf-1Oi">
-                                <rect key="frame" x="20" y="938" width="63" height="36"/>
+                                <rect key="frame" x="20" y="885" width="141" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="KRJ-A0-ad3"/>
+                                    <constraint firstAttribute="width" constant="141" id="k94-pV-p5i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Config"/>
                                 <connections>
                                     <segue destination="4XJ-Cs-VfV" kind="popoverPresentation" identifier="configSegue" popoverAnchorView="HD0-Jf-1Oi" id="HHI-Ua-EHa">
@@ -55,8 +55,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zl-35-N8N">
-                                <rect key="frame" x="702" y="938" width="46" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="607" y="885" width="141" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="2HR-CO-UkQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="Ayl-gd-Mz6" kind="popoverPresentation" identifier="loginSegue" popoverAnchorView="7zl-35-N8N" id="TIO-DD-j4i">
@@ -65,7 +68,8 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaa-gf-XBY">
-                                <rect key="frame" x="704" y="939" width="42" height="34"/>
+                                <rect key="frame" x="607" y="885" width="141" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Profil"/>
                                 <connections>
                                     <segue destination="Jdv-yA-az2" kind="popoverPresentation" identifier="profilSegue" popoverAnchorView="jaa-gf-XBY" id="Tbv-Bo-Rhp">
@@ -77,21 +81,24 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BrB-h1-WRS" secondAttribute="trailing" id="3z3-UV-gMt"/>
-                            <constraint firstItem="7zl-35-N8N" firstAttribute="baseline" secondItem="jaa-gf-XBY" secondAttribute="baseline" id="6Mz-r3-oiJ"/>
-                            <constraint firstItem="KMv-TI-8eb" firstAttribute="bottom" secondItem="7zl-35-N8N" secondAttribute="bottom" id="BBR-qu-KrH"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="Esi-bv-HVB"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="KMv-TI-8eb" secondAttribute="trailing" id="FdK-AD-IYa"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="GEN-AL-EUA"/>
-                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="top" secondItem="7zl-35-N8N" secondAttribute="top" id="UsT-rA-dSz"/>
-                            <constraint firstItem="KMv-TI-8eb" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="659" id="XCU-uy-0pD"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="jaa-gf-XBY" secondAttribute="trailing" constant="22" id="aTY-jx-se1"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="HD0-Jf-1Oi" secondAttribute="bottom" id="cvm-Py-lDl"/>
-                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="bottom" secondItem="7zl-35-N8N" secondAttribute="bottom" id="fFg-7N-48d"/>
-                            <constraint firstItem="7zl-35-N8N" firstAttribute="trailing" secondItem="U0K-SW-4ec" secondAttribute="trailingMargin" id="qqU-A6-vfV"/>
-                            <constraint firstItem="7zl-35-N8N" firstAttribute="centerX" secondItem="jaa-gf-XBY" secondAttribute="centerX" id="s9z-he-WH8"/>
-                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leadingMargin" id="tPa-m2-Ah1"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="uXr-Do-vPP"/>
+                            <constraint firstItem="jaa-gf-XBY" firstAttribute="trailing" secondItem="7zl-35-N8N" secondAttribute="trailing" id="195-OU-WAp"/>
+                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leadingMargin" id="1XZ-4F-lsh"/>
+                            <constraint firstItem="jaa-gf-XBY" firstAttribute="leading" secondItem="7zl-35-N8N" secondAttribute="leading" id="3OA-GQ-33V"/>
+                            <constraint firstItem="jaa-gf-XBY" firstAttribute="top" secondItem="7zl-35-N8N" secondAttribute="top" id="5J9-j6-a1r"/>
+                            <constraint firstItem="7zl-35-N8N" firstAttribute="trailing" secondItem="U0K-SW-4ec" secondAttribute="trailingMargin" id="6vZ-op-ZeE"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="KMv-TI-8eb" secondAttribute="trailing" id="AK6-CJ-hM3"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="Aj7-6k-pkg"/>
+                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="865" id="IWU-X8-Us4"/>
+                            <constraint firstItem="7zl-35-N8N" firstAttribute="baseline" secondItem="jaa-gf-XBY" secondAttribute="firstBaseline" id="K38-bV-tak"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="LLr-3f-PIn"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="KMv-TI-8eb" secondAttribute="bottom" id="Lwl-Wk-hhc"/>
+                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="top" secondItem="7zl-35-N8N" secondAttribute="top" id="QVD-YT-1ml"/>
+                            <constraint firstAttribute="trailing" secondItem="BrB-h1-WRS" secondAttribute="trailing" id="b9p-6X-riu"/>
+                            <constraint firstItem="jaa-gf-XBY" firstAttribute="baseline" secondItem="7zl-35-N8N" secondAttribute="firstBaseline" id="fqd-yG-Btq"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="lhA-8K-vDF"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="HD0-Jf-1Oi" secondAttribute="bottom" constant="1" id="mWK-Wb-zfD"/>
+                            <constraint firstItem="KMv-TI-8eb" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="659" id="txw-1s-GZo"/>
+                            <constraint firstItem="HD0-Jf-1Oi" firstAttribute="baseline" secondItem="jaa-gf-XBY" secondAttribute="baseline" id="whw-Xq-D2L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
