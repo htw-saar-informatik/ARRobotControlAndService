@@ -14,15 +14,17 @@ class ViewController: UIViewController{
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var loginButton: UIButton!
     @IBOutlet var configButton: UIButton!
+    @IBOutlet var loginButton: UIButton!
     @IBOutlet var profilButton: UIButton!
     let erzeugeSCNNode = ErzeugeSCNNode()
     var anzeige:Bool = false
     var document = [Roboter]()
+    var saveUserID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -31,6 +33,8 @@ class ViewController: UIViewController{
         sceneView.showsStatistics = true
         loadData()
         checkForUpdates()
+        uiAnpassung()
+        
         tableView.dataSource = self
         
     }
@@ -105,6 +109,42 @@ class ViewController: UIViewController{
                     }
                 }
             })
+    }
+    func ladeProfil(){
+        if let userInformation = UserDefaults.standard.dictionary(forKey: "userInformation") {
+            let loginType = userInformation["type"] as! String
+            if loginType == "mail"{
+                saveUserID = userInformation["userid"] as! String
+                let savedEmail = userInformation["email"] as! String
+                let savedPassword = userInformation["password"] as! String
+                AuthenticationController.loginUser(withEmail: savedEmail, password: savedPassword) { [weak weakSelf = self](userId) in
+                    DispatchQueue.main.async {
+                        if let userId = userId, userId == self.saveUserID {
+                        } else {
+                        }
+                    }
+                }
+            }
+        }
+        else{
+            saveUserID = ""
+        }
+    }
+    
+    func uiAnpassung(){
+        ladeProfil()
+        if saveUserID != ""
+        {
+            loginButton.isHidden = true;
+            profilButton.isHidden = false;
+            configButton.isHidden = false;
+        }
+        else
+        {
+            loginButton.isHidden = false
+            profilButton.isHidden = true
+            configButton.isHidden = true
+        }
     }
   
 }

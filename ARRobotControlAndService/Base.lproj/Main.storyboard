@@ -52,8 +52,55 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Registrieren"/>
                                 <connections>
-                                    <action selector="registerButtonTapped:" destination="Ayl-gd-Mz6" eventType="touchDown" id="hCO-vd-RVw"/>
-                                    <segue destination="9Gy-Mw-XxH" kind="show" identifier="registerSegue" id="6ss-YF-6gU"/>
+                                    <action selector="loginRegisterButtonTapped:" destination="Ayl-gd-Mz6" eventType="touchUpInside" id="5GP-Lc-UfY"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail Adresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-cp-I3Z">
+                                <rect key="frame" x="16" y="52" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiL-8h-6xI">
+                                <rect key="frame" x="16" y="103" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwort wiederholen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-RZ-wZy">
+                                <rect key="frame" x="16" y="154" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFL-Pv-726">
+                                <rect key="frame" x="139" y="314" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Zurück">
+                                    <color key="titleColor" red="0.4039215686" green="0.81960784310000001" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerBackButtonTapped:" destination="Ayl-gd-Mz6" eventType="touchUpInside" id="Lgb-wN-wAp"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCo-NA-QkA" customClass="RoundedButton" customModule="ARRobotControlAndService" customModuleProvider="target">
+                                <rect key="frame" x="79" y="219" width="170" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4039215686" green="0.81960784310000001" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Registrieren">
+                                    <color key="titleColor" red="0.25490196079999999" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="Ayl-gd-Mz6" eventType="touchUpInside" id="xaz-pc-JqQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,8 +108,16 @@
                         <viewLayoutGuide key="safeArea" id="rg8-Pb-IFA"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="UFX-8p-jHv" id="5dL-mf-H6g"/>
+                        <outlet property="loginRegisterButton" destination="N6i-Vu-CGp" id="IeB-69-Gg1"/>
+                        <outlet property="loginRegisterLabel" destination="OfC-Dr-7em" id="Kpu-jX-n6i"/>
                         <outlet property="mailTextField" destination="g00-J4-jeE" id="26u-VT-ZPD"/>
                         <outlet property="passwordTextField" destination="5bJ-yX-Xhu" id="xmg-eC-fmF"/>
+                        <outlet property="registerBackButton" destination="MFL-Pv-726" id="lQi-aM-a7A"/>
+                        <outlet property="registerButton" destination="FCo-NA-QkA" id="Oi3-96-JcR"/>
+                        <outlet property="registerMailTextField" destination="Y1C-cp-I3Z" id="gbo-R5-quR"/>
+                        <outlet property="registerPasswordRetypeField" destination="P2b-RZ-wZy" id="075-Zv-0YC"/>
+                        <outlet property="registerPasswordTextField" destination="iiL-8h-6xI" id="B3o-pR-h4P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erQ-xr-tBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,7 +286,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Config"/>
                                 <connections>
-                                    <segue destination="4XJ-Cs-VfV" kind="popoverPresentation" popoverAnchorView="H54-uD-44C" id="5k8-Vy-YBf">
+                                    <segue destination="4XJ-Cs-VfV" kind="popoverPresentation" identifier="configSegue" popoverAnchorView="H54-uD-44C" id="5k8-Vy-YBf">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -257,7 +312,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="Ayl-gd-Mz6" kind="popoverPresentation" popoverAnchorView="8V7-RH-Srh" id="Hl2-on-WkG">
+                                    <segue destination="Ayl-gd-Mz6" kind="popoverPresentation" identifier="loginSegue" popoverAnchorView="8V7-RH-Srh" id="Hl2-on-WkG">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -268,7 +323,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Profil"/>
                                 <connections>
-                                    <segue destination="Jdv-yA-az2" kind="popoverPresentation" popoverAnchorView="S4P-t2-Vdz" id="CEa-lE-YRP">
+                                    <segue destination="Jdv-yA-az2" kind="popoverPresentation" identifier="profilSegue" popoverAnchorView="S4P-t2-Vdz" id="CEa-lE-YRP">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -284,9 +339,9 @@
                         <viewLayoutGuide key="safeArea" id="4Fs-JS-krq"/>
                     </view>
                     <connections>
-                        <outlet property="configButton" destination="H54-uD-44C" id="35M-ks-j73"/>
-                        <outlet property="loginButton" destination="8V7-RH-Srh" id="u6K-Tu-zll"/>
-                        <outlet property="profilButton" destination="8V7-RH-Srh" id="bdI-1n-Eoc"/>
+                        <outlet property="configButton" destination="H54-uD-44C" id="b1u-Gd-OjV"/>
+                        <outlet property="loginButton" destination="8V7-RH-Srh" id="a5l-X3-Lmj"/>
+                        <outlet property="profilButton" destination="S4P-t2-Vdz" id="1Uh-a1-hV2"/>
                         <outlet property="sceneView" destination="jbb-r2-bhM" id="kfP-la-QoZ"/>
                         <outlet property="tableView" destination="KxT-ck-28j" id="cJ6-HD-s8q"/>
                     </connections>
