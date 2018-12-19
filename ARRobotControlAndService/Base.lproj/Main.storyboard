@@ -328,6 +328,15 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uc-LY-nRC">
+                                <rect key="frame" x="633" y="12" width="115" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="restButtonTapped:" destination="wD3-8C-ZgW" eventType="touchUpInside" id="glU-od-eZf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -342,6 +351,7 @@
                         <outlet property="configButton" destination="H54-uD-44C" id="b1u-Gd-OjV"/>
                         <outlet property="loginButton" destination="8V7-RH-Srh" id="a5l-X3-Lmj"/>
                         <outlet property="profilButton" destination="S4P-t2-Vdz" id="1Uh-a1-hV2"/>
+                        <outlet property="restButton" destination="2Uc-LY-nRC" id="oXN-ap-jfb"/>
                         <outlet property="sceneView" destination="jbb-r2-bhM" id="kfP-la-QoZ"/>
                         <outlet property="tableView" destination="KxT-ck-28j" id="cJ6-HD-s8q"/>
                     </connections>

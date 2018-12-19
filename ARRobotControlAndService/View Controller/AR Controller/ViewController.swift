@@ -16,6 +16,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var configButton: UIButton!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var restButton: UIButton!
     @IBOutlet var profilButton: UIButton!
     let erzeugeSCNNode = ErzeugeSCNNode()
     var anzeige:Bool = false
@@ -58,6 +59,12 @@ class ViewController: UIViewController{
         sceneView.session.pause()
     }
 
+    @IBAction func restButtonTapped(_ sender: Any) {
+        anzeige = false
+        sceneView.scene.rootNode.enumerateChildNodes{(planeNode, _) in
+            planeNode.removeFromParentNode()
+        }
+    }
     // MARK: - ARSCNViewDelegate
     
     func loadData(){

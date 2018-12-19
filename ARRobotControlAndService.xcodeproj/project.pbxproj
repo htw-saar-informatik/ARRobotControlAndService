@@ -31,6 +31,7 @@
 		74AAA5FC21BA796200FF10EC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5FB21BA796200FF10EC /* RoundedButton.swift */; };
 		74AAA60021BA7C3C00FF10EC /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5FF21BA7C3C00FF10EC /* ProfilViewController.swift */; };
 		74AAA60221BA7C5D00FF10EC /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA60121BA7C5D00FF10EC /* ConfigurationViewController.swift */; };
+		74E993C721CA455A000463A4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E993C621CA455A000463A4 /* Extension.swift */; };
 		F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		74AAA5FB21BA796200FF10EC /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		74AAA5FF21BA7C3C00FF10EC /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		74AAA60121BA7C5D00FF10EC /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		74E993C621CA455A000463A4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.release.xcconfig"; sourceTree = "<group>"; };
 		C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARRobotControlAndService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				74AAA5EC21BA6E8100FF10EC /* NotificationUtility.swift */,
 				74AAA5F021BA74BA00FF10EC /* Me.swift */,
 				74AAA5F621BA78D100FF10EC /* UIUtility.swift */,
+				74E993C621CA455A000463A4 /* Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				74AAA5FC21BA796200FF10EC /* RoundedButton.swift in Sources */,
 				74AAA60021BA7C3C00FF10EC /* ProfilViewController.swift in Sources */,
 				74AAA5EF21BA6EA200FF10EC /* User.swift in Sources */,
+				74E993C721CA455A000463A4 /* Extension.swift in Sources */,
 				74AAA5F321BA784E00FF10EC /* LandingViewController.swift in Sources */,
 				74AAA60221BA7C5D00FF10EC /* ConfigurationViewController.swift in Sources */,
 				74AAA5F521BA789B00FF10EC /* LoginViewController.swift in Sources */,
