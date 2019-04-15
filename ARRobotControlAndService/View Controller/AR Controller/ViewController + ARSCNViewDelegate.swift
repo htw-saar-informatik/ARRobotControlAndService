@@ -38,13 +38,11 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
             
             
             if let imageName = imageAnchor.referenceImage.name{
-                
-                let alert = UIAlertController(title: imageName, message:"Noch funktioniert alles", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
+                //loadData(imageName: imageName);
+                name = imageName
+                checkForUpdates(imageName: imageName)
                 
                 let planeNode = erzeugeSCNNode.erzeugeSCNNode(imageName: imageName)
-                //planeNode.position = SCNVector3(anchor.transform.columns.3.x, anchor.transform.columns.3.y, anchor.transform.columns.3.z)
                 planeNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
                 planeNode.localRotate(by: SCNQuaternion(x: 0, y: 0, z: 0.7071, w: 0.7071))
                 planeNode.geometry?.firstMaterial?.diffuse.contents = tableView

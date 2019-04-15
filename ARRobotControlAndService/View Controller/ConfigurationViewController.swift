@@ -10,9 +10,15 @@ import UIKit
 
 class ConfigurationViewController: UITableViewController {
 
+    var saveUserID:String = ""
+    var werte: [(key: String, value: String)] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        ladeProfil()
+        //checkForUpdates()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,26 +27,32 @@ class ConfigurationViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
-
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return werte.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let anzeige = werte[indexPath.row]
+        cell.textLabel?.text = "\(anzeige.key): \(anzeige.value)"
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (werte[indexPath.row].value.contains("true")){
+            updateDB(eintrag: werte[indexPath.row].key, wert: false)
+        } else{
+            updateDB(eintrag: werte[indexPath.row].key, wert: true)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,15 +88,88 @@ class ConfigurationViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func updateDB(eintrag: String, wert: Bool){
+        FirebaseHelper.getDB().collection("user").document(saveUserID).collection("Config").document(eintrag).updateData(["\(eintrag)": wert]) {
+            err in
+            if let err = err {
+                print("Error")
+            } else {
+                print("Update successfull")
+            }
+        }
     }
-    */
+
+    
+    func ladeProfil(){
+        if let userInformation = UserDefaults.standard.dictionary(forKey: "userInformation") {
+            let loginType = userInformation["type"] as! String
+            if loginType == "mail"{
+                saveUserID = userInformation["userid"] as! String
+                let savedEmail = userInformation["email"] as! String
+                let savedPassword = userInformation["password"] as! String
+                AuthenticationController.loginUser(withEmail: savedEmail, password: savedPassword) { [weak weakSelf = self](userId) in
+                    DispatchQueue.main.async {
+                        if let userId = userId, userId == self.saveUserID {
+                            self.checkForUpdates()
+                        } else {
+                        }
+                    }
+                }
+            }
+        }
+        else{
+            saveUserID = ""
+        }
+    }
+    
+    func checkForUpdates(){
+        FirebaseHelper.getDB().collection("user").document(saveUserID).collection("Config")
+            .addSnapshotListener({
+                querySnapshot, error in
+                guard let snapshot = querySnapshot else {return}
+                
+                snapshot.documentChanges.forEach{
+                    diff in
+                    
+                    if diff.type == .modified {
+                        var anzahl = 0
+                        do {
+                            let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                            if let string = String(data: data, encoding: String.Encoding.utf8) {
+                                var i: Int = 0
+                                for (key, value) in self.werte {
+                                    if key == diff.document.documentID {
+                                        self.werte[i] = (key: diff.document.documentID, value: string.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\(diff.document.documentID)", with: "").replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: ""))
+                                    } else {
+                                        i += 1
+                                    }
+                                }
+                            }
+                        } catch {
+                            print(error)
+                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                    if diff.type == .added {
+                        do {
+                            let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                            if let string = String(data: data, encoding: String.Encoding.utf8) {
+                                self.werte.append((key: diff.document.documentID, value: string.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\(diff.document.documentID)", with: "").replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: "")))
+                            }
+                        } catch {
+                            print(error)
+                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        
+                    }
+                }
+            })
+    }
+    
 
 }
