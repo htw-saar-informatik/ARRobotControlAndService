@@ -22,6 +22,7 @@ class ViewController: UIViewController{
     var anzeige:Bool = false
     var werte: [(key: String, value: String)] = []
     var userAnzeige: [(key: String, value: String)] = []
+    var anzeigeStatusinformationen: [(key: String, value: String)] = []
     var saveUserID:String = ""
     var name: String = ""
     
@@ -31,12 +32,14 @@ class ViewController: UIViewController{
         
         // Set the view's delegate
         sceneView.delegate = self
+        ladeStatusinformationen()
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         uiAnpassung()
         
         tableView.dataSource = self
+        
         
     }
     
@@ -48,6 +51,7 @@ class ViewController: UIViewController{
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
         configuration.detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
     }
@@ -93,7 +97,7 @@ class ViewController: UIViewController{
             
         }
     }
-    
+    //Firestorelistener für Statusinformationen eines Roboters
     func checkForUpdates(imageName: String){
         self.werte.removeAll()
         FirebaseHelper.getDB().collection("roboter").document(imageName).collection("content")
@@ -183,16 +187,18 @@ class ViewController: UIViewController{
         }
     }
     
+   
+    //Firestorelistener für Config Dokumente eines Users
     func checkForUserConfig(){
+        
         userAnzeige.removeAll()
         FirebaseHelper.getDB().collection("user").document(saveUserID).collection("Config")
             .addSnapshotListener({
                 querySnapshot, error in
                 guard let snapshot = querySnapshot else {return}
-                
                 snapshot.documentChanges.forEach{
                     diff in
-                    
+                    //Modifizierung der Config Dokumente
                     if diff.type == .modified {
                         do {
                             let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -210,19 +216,17 @@ class ViewController: UIViewController{
                             print(error)
                         }
                         if(self.name.isEmpty == false) {
-                            print("TEST")
-                            print(self.name)
                             self.werte.removeAll()
                             self.checkForUpdates(imageName: self.name)
                         }
                     }
+                    //Hinzufügen der Config Dokumente in das entsprechden array
                     if diff.type == .added {
                         do {
                             let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
                             if let string = String(data: data, encoding: String.Encoding.utf8) {
                                 self.userAnzeige.append((key: diff.document.documentID, value: string.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\(diff.document.documentID)", with: "").replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: "")))
                             }
-                            
                         } catch {
                             print(error)
                         }
@@ -232,13 +236,48 @@ class ViewController: UIViewController{
                             self.werte.removeAll()
                             self.checkForUpdates(imageName: self.name)
                         }
-                    
                     }
                 }
-                
             })
-        
-        
+        ladeStatusinformationen()
+    }
+    
+    //Firestorelistener für Config Collection, wird benötigt damit neue Config Daten in die Config Documents eines Users hinzugefügt werden können
+    func ladeStatusinformationen(){
+        anzeigeStatusinformationen.removeAll()
+        FirebaseHelper.getDB().collection("config")
+            .addSnapshotListener({
+                querySnapshot, error in
+                guard let snapshot = querySnapshot else {return}
+                snapshot.documentChanges.forEach{
+                    diff in
+                    if diff.type == .added {
+                        do {
+                            let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                            if let string = String(data: data, encoding: String.Encoding.utf8) {
+                                self.anzeigeStatusinformationen.append((key: diff.document.documentID, value: string.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\(diff.document.documentID)", with: "").replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: "")))
+                            }
+                            if(self.userAnzeige.count != 0 && self.saveUserID != "") {
+                                var bool: Bool = false;
+                                for (key, value) in self.userAnzeige {
+                                   if(key == diff.document.documentID)
+                                   {
+                                        bool = true
+                                    }
+                                }
+                                if(bool == false)
+                                {
+                                    FirebaseHelper.getDB().collection("user").document("\(self.saveUserID)").collection("Config").document("\(diff.document.documentID)").setData(["\(diff.document.documentID)": true])
+                                    bool = false
+                                }
+                            }
+                        } catch {
+                            print(error)
+                        }
+                        
+                    }
+                }
+            })
     }
   
 }
