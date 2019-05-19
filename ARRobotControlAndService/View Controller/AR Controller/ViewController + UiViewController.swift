@@ -21,6 +21,8 @@ extension ViewController : UITableViewDataSource {
         let roboter = werte[indexPath.row]
         cell.textLabel?.text = "\(roboter.key): \(roboter.value.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\"", with: ""))"
         
+        
+        
         return cell
         
     }

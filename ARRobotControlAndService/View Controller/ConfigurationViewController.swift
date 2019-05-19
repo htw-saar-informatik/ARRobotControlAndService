@@ -41,16 +41,31 @@ class ConfigurationViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let anzeige = werte[indexPath.row]
-        cell.textLabel?.text = "\(anzeige.key): \(anzeige.value)"
+        cell.textLabel?.text = "\(anzeige.key)"
+        let switchView = UISwitch(frame: .zero)
+        if(anzeige.value == "true"){
+            switchView.setOn(true, animated: true)
+        }else{
+            switchView.setOn(false, animated: true)
+        }
+        switchView.tag = indexPath.row
+        switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+        cell.accessoryView = switchView
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (werte[indexPath.row].value.contains("true")){
-            updateDB(eintrag: werte[indexPath.row].key, wert: false)
-        } else{
-            updateDB(eintrag: werte[indexPath.row].key, wert: true)
+    @objc func switchChanged(_ sender : UISwitch!){
+        print("table row switch Changed \(sender.tag)")
+        if(sender.isOn){
+            print("The switch is \(sender.isOn ? "ON" : "OFF")")
+            updateDB(eintrag: werte[sender.tag].key, wert: true)
         }
+        else{
+            print("The switch is \(sender.isOn ? "ON" : "OFF")")
+            updateDB(eintrag: werte[sender.tag].key, wert: false)
+        }
+        
+        
     }
     
 
