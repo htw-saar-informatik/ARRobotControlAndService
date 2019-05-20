@@ -49,7 +49,9 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
                     planeNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
                     planeNode.localRotate(by: SCNQuaternion(x: 0, y: 0, z: 0.7071, w: 0.7071))
                     planeNode.geometry?.firstMaterial?.diffuse.contents = tableView
-                    tableView.isHidden = false
+                    DispatchQueue.main.async {
+                        self.tableView.isHidden = false
+                    }
                     sceneView.scene.rootNode.addChildNode(planeNode)
 
                 }

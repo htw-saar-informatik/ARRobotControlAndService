@@ -19,12 +19,13 @@ extension ViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let roboter = werte[indexPath.row]
-        cell.textLabel?.text = "\(roboter.key): \(roboter.value.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\"", with: ""))"
+        cell.textLabel?.text = "\(roboter.value.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\"", with: ""))"
         
         
         
         return cell
         
     }
+    
     
 }

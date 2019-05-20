@@ -104,19 +104,40 @@ class ViewController: UIViewController{
             .addSnapshotListener({
                 querySnapshot, error in
                 guard let snapshot = querySnapshot else {return}
-                self.werte.removeAll()
                 snapshot.documentChanges.forEach{
                     diff in
                     if diff.type == .modified {
                         do {
-                            let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                            let data = try JSONSerialization.data(withJSONObject: diff.document.data())
                             if let string = String(data: data, encoding: String.Encoding.utf8) {
-                                var i: Int = 0
-                                for (key, value) in self.werte {
-                                    if (key == diff.document.documentID) {
-                                        self.werte[i] = (key: diff.document.documentID, value: string)
-                                    } else {
-                                        i += 1
+                                let stringArray = string.components(separatedBy: "}")
+                                
+                                stringArray.forEach{ body in
+                                    if(body != ""){
+                                        if(body != "\n"){
+                                            var i: Int = 0
+                                            for (key, value) in self.werte {
+                                                if(body[..<body.index(body.startIndex, offsetBy: 1)] == ","){
+                                                    let indexStartOFText = body.index(body.startIndex, offsetBy: 1)
+                                                    let indexEndOFText = body.index(body.endIndex, offsetBy: 0)
+                                                    
+                                                    let neuerWert = String(body[indexStartOFText..<indexEndOFText])
+                                                    if (key == diff.document.documentID && neuerWert[..<neuerWert.index(neuerWert.startIndex, offsetBy: 4)] == value[..<value.index(value.startIndex, offsetBy: 4)]){
+                                                        
+                                                        self.werte[i] = (key: diff.document.documentID, value: neuerWert.replacingOccurrences(of: "{", with: ""))
+                                                    } else {
+                                                        i += 1
+                                                    }
+                                                } else {
+                                                    var body2 = body.replacingOccurrences(of: "{", with: "")
+                                                    if (key == diff.document.documentID && body2[..<body2.index(body2.startIndex, offsetBy: 4)] == value[..<value.index(value.startIndex, offsetBy: 4)]){
+                                                        self.werte[i] = (key: diff.document.documentID, value: body.replacingOccurrences(of: "{", with: ""))
+                                                    } else {
+                                                        i += 1
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -132,9 +153,29 @@ class ViewController: UIViewController{
                         for(element, wert) in self.userAnzeige {
                             if(element == diff.document.documentID && wert.contains("true")){
                                 do {
-                                    let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
+                                    let data = try JSONSerialization.data(withJSONObject: diff.document.data())
+                                    print(diff.document.data())
+                                    print(data)
                                     if let string = String(data: data, encoding: String.Encoding.utf8) {
-                                        self.werte.append((key: diff.document.documentID, value: string))
+                                        let stringArray = string.components(separatedBy: "}")
+                                            stringArray.forEach{ body in
+                                                if (body != "")
+                                                {
+                                                    if(body != "\n")
+                                                    {
+                                                        
+                                                        if(body[..<body.index(body.startIndex, offsetBy: 1)] == ","){
+                                                            let indexStartOFText = body.index(body.startIndex, offsetBy: 1)
+                                                            let indexEndOFText = body.index(body.endIndex, offsetBy: 0)
+                                                            let neuerWert = String(body[indexStartOFText..<indexEndOFText])
+                                                            self.werte.append((key: diff.document.documentID, value: neuerWert.replacingOccurrences(of: "{", with: "")))
+                                                        }
+                                                        else{
+                                                            self.werte.append((key: diff.document.documentID, value: body.replacingOccurrences(of: "{", with: "")))
+                                                        }
+                                                    }
+                                                }
+                                            }
                                     }
                                 } catch {
                                     print(error)
