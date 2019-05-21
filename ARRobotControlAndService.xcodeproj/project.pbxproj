@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741B57F42248DB310054FD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741B57F32248DB310054FD91 /* Assets.xcassets */; };
 		741FCCE921B9233600DA621E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741FCCE821B9233600DA621E /* AppDelegate.swift */; };
 		741FCCEB21B9233600DA621E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCEA21B9233600DA621E /* art.scnassets */; };
 		741FCCED21B9233600DA621E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741FCCEC21B9233600DA621E /* ViewController.swift */; };
 		741FCCF021B9233600DA621E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCEE21B9233600DA621E /* Main.storyboard */; };
-		741FCCF221B9233900DA621E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF121B9233900DA621E /* Assets.xcassets */; };
 		741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741FCCF321B9233900DA621E /* LaunchScreen.storyboard */; };
 		74A9096421C6554A00A4CDAB /* ViewController + Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9096321C6554A00A4CDAB /* ViewController + Actions.swift */; };
 		74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */; };
 		74AAA5DF21BA66B200FF10EC /* ViewController + UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */; };
-		74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E121BA67EA00FF10EC /* Roboter.swift */; };
 		74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */; };
 		74AAA5E721BA69F800FF10EC /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */; };
 		74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */; };
@@ -31,22 +30,22 @@
 		74AAA5FC21BA796200FF10EC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5FB21BA796200FF10EC /* RoundedButton.swift */; };
 		74AAA60021BA7C3C00FF10EC /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA5FF21BA7C3C00FF10EC /* ProfilViewController.swift */; };
 		74AAA60221BA7C5D00FF10EC /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AAA60121BA7C5D00FF10EC /* ConfigurationViewController.swift */; };
+		74E993C721CA455A000463A4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E993C621CA455A000463A4 /* Extension.swift */; };
 		F2756CBBB2DB2A58507D86A8 /* Pods_ARRobotControlAndService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		741B57F32248DB310054FD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741FCCE521B9233600DA621E /* ARRobotControlAndService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARRobotControlAndService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		741FCCE821B9233600DA621E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		741FCCEA21B9233600DA621E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		741FCCEC21B9233600DA621E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		741FCCEF21B9233600DA621E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		741FCCF121B9233900DA621E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741FCCF421B9233900DA621E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		741FCCF621B9233900DA621E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A9096321C6554A00A4CDAB /* ViewController + Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Actions.swift"; sourceTree = "<group>"; };
 		74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74AAA5DE21BA66B200FF10EC /* ViewController + UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + UiViewController.swift"; sourceTree = "<group>"; };
-		74AAA5E121BA67EA00FF10EC /* Roboter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roboter.swift; sourceTree = "<group>"; };
 		74AAA5E321BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		74AAA5E621BA69F800FF10EC /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		74AAA5E821BA6BC200FF10EC /* ErzeugeSCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErzeugeSCNNode.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		74AAA5FB21BA796200FF10EC /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		74AAA5FF21BA7C3C00FF10EC /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		74AAA60121BA7C5D00FF10EC /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		74E993C621CA455A000463A4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A0D2E029D04CDEEE04BD1759 /* Pods-ARRobotControlAndService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.release.xcconfig"; sourceTree = "<group>"; };
 		C0705BF78F771991F3593CFD /* Pods_ARRobotControlAndService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARRobotControlAndService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4471726BCE4D767C5D1E5AC /* Pods-ARRobotControlAndService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARRobotControlAndService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARRobotControlAndService/Pods-ARRobotControlAndService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,9 +120,9 @@
 				74AAA5E021BA67DC00FF10EC /* Model */,
 				74AAA5DC21BA661000FF10EC /* View Controller */,
 				741FCCE821B9233600DA621E /* AppDelegate.swift */,
+				741B57F32248DB310054FD91 /* Assets.xcassets */,
 				741FCCEA21B9233600DA621E /* art.scnassets */,
 				741FCCEE21B9233600DA621E /* Main.storyboard */,
-				741FCCF121B9233900DA621E /* Assets.xcassets */,
 				741FCCF321B9233900DA621E /* LaunchScreen.storyboard */,
 				741FCCF621B9233900DA621E /* Info.plist */,
 				74AAA5D921BA60C500FF10EC /* GoogleService-Info.plist */,
@@ -157,7 +157,6 @@
 		74AAA5E021BA67DC00FF10EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				74AAA5E121BA67EA00FF10EC /* Roboter.swift */,
 				74AAA5EE21BA6EA200FF10EC /* User.swift */,
 			);
 			path = Model;
@@ -173,6 +172,7 @@
 				74AAA5EC21BA6E8100FF10EC /* NotificationUtility.swift */,
 				74AAA5F021BA74BA00FF10EC /* Me.swift */,
 				74AAA5F621BA78D100FF10EC /* UIUtility.swift */,
+				74E993C621CA455A000463A4 /* Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -249,8 +249,8 @@
 				741FCCEB21B9233600DA621E /* art.scnassets in Resources */,
 				741FCCF521B9233900DA621E /* LaunchScreen.storyboard in Resources */,
 				74AAA5DA21BA60C500FF10EC /* GoogleService-Info.plist in Resources */,
-				741FCCF221B9233900DA621E /* Assets.xcassets in Resources */,
 				741FCCF021B9233600DA621E /* Main.storyboard in Resources */,
+				741B57F42248DB310054FD91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +377,6 @@
 				74AAA5F121BA74BA00FF10EC /* Me.swift in Sources */,
 				74AAA5E421BA688000FF10EC /* ViewController + ARSCNViewDelegate.swift in Sources */,
 				741FCCED21B9233600DA621E /* ViewController.swift in Sources */,
-				74AAA5E221BA67EA00FF10EC /* Roboter.swift in Sources */,
 				74AAA5E921BA6BC200FF10EC /* ErzeugeSCNNode.swift in Sources */,
 				74AAA5F921BA791500FF10EC /* RegisterViewController.swift in Sources */,
 				74AAA5ED21BA6E8100FF10EC /* NotificationUtility.swift in Sources */,
@@ -387,6 +386,7 @@
 				74AAA5FC21BA796200FF10EC /* RoundedButton.swift in Sources */,
 				74AAA60021BA7C3C00FF10EC /* ProfilViewController.swift in Sources */,
 				74AAA5EF21BA6EA200FF10EC /* User.swift in Sources */,
+				74E993C721CA455A000463A4 /* Extension.swift in Sources */,
 				74AAA5F321BA784E00FF10EC /* LandingViewController.swift in Sources */,
 				74AAA60221BA7C5D00FF10EC /* ConfigurationViewController.swift in Sources */,
 				74AAA5F521BA789B00FF10EC /* LoginViewController.swift in Sources */,

@@ -58,7 +58,7 @@ struct User{
         }
     }
     
-    func save(completion: @escaping ()->()){
+    func save(){
         let jsonUser = toJson(mode: .initalWrite)
         let userRef = FirebaseHelper.getDB().collection("user").document(Me.uid).setData(jsonUser)
         

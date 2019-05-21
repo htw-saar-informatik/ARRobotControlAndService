@@ -28,30 +28,38 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor){
         // guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        
-        if !anzeige {
-            anzeige = true
-            guard let imageAnchor = anchor as? ARImageAnchor else {return}
-            guard let currentFrame = sceneView.session.currentFrame else {return}
-            var translation = matrix_identity_float4x4
-            translation.columns.3.z = -3
+        if saveUserID != ""{
+            if !anzeige {
+                anzeige = true
+                guard let imageAnchor = anchor as? ARImageAnchor else {return}
+                guard let currentFrame = sceneView.session.currentFrame else {return}
+                var translation = matrix_identity_float4x4
+                translation.columns.3.z = -3
             
             
-            if let imageName = imageAnchor.referenceImage.name{
+                if let imageName = imageAnchor.referenceImage.name{
                 
-                let alert = UIAlertController(title: imageName, message:"Noch funktioniert alles", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
+                    
+                    //loadData(imageName: imageName);
+                    let array = imageName.components(separatedBy: "-")
+                    name = array[1]
+                    checkForUpdates(imageName: name)
                 
-                let planeNode = erzeugeSCNNode.erzeugeSCNNode(imageName: imageName)
-                //planeNode.position = SCNVector3(anchor.transform.columns.3.x, anchor.transform.columns.3.y, anchor.transform.columns.3.z)
-                planeNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
-                planeNode.localRotate(by: SCNQuaternion(x: 0, y: 0, z: 0.7071, w: 0.7071))
-                planeNode.geometry?.firstMaterial?.diffuse.contents = tableView
-                tableView.isHidden = false
-                sceneView.scene.rootNode.addChildNode(planeNode)
+                    let planeNode = erzeugeSCNNode.erzeugeSCNNode(imageName: name)
+                    planeNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
+                    planeNode.localRotate(by: SCNQuaternion(x: 0, y: 0, z: 0.7071, w: 0.7071))
+                    planeNode.geometry?.firstMaterial?.diffuse.contents = tableView
+                    DispatchQueue.main.async {
+                        self.tableView.isHidden = false
+                    }
+                    sceneView.scene.rootNode.addChildNode(planeNode)
 
+                }
             }
+        }
+        else
+        {
+            NotificationUtility.showPrettyMessage(with: "Bitte zuerst anmelden", button: "ok", style: .error)
         }
     }
 }

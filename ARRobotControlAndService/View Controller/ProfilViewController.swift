@@ -9,11 +9,33 @@
 import UIKit
 
 class ProfilViewController: UIViewController {
+
+    
+    @IBOutlet var eMailLabel: UILabel!
+    @IBOutlet var passwordLabel: UILabel!
+    @IBOutlet var passwordButton: UIButton!
+    var anzeige: Bool = false;
+    var saveUserID: String = ""
+    var savedEMail: String = ""
+    var savedPassword: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        if let userInformation = UserDefaults.standard.dictionary(forKey: "userInformation") {
+            let loginType = userInformation["type"] as! String
+            if loginType == "mail"{
+                saveUserID = userInformation["userid"] as! String
+                savedEMail = userInformation["email"] as! String
+                savedPassword = userInformation["password"] as! String
+        
+            }
+        }
+        
+        eMailLabel.text = savedEMail;
+        passwordLabel.text = savedPassword;
+        
     }
     
     
@@ -32,6 +54,20 @@ class ProfilViewController: UIViewController {
         }
     }
     
+    
+    
+    @IBAction func passwordButtonTapped(_ sender: Any) {
+        if(anzeige == false) {
+            passwordLabel.isHidden=false
+            anzeige = true;
+            passwordButton.setTitle("Passwort ausblenden", for: .normal);
+        }
+        else {
+            passwordLabel.isHidden = true;
+            anzeige = false;
+            passwordButton.setTitle("Passwort anzeigen", for: .normal);
+        }
+    }
     
     
     /*

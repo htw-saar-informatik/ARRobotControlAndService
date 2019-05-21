@@ -25,9 +25,7 @@ struct AuthenticationController{
                 // sends a verification mail to the newly created user
                 user.user.sendEmailVerification(completion: nil)
                 let usr = User(id: user.user.uid, mail: email)
-                usr.save {
-                    completion(usr)
-                }
+                usr.save()
                 
                 
             }else {
