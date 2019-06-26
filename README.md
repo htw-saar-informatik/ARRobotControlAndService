@@ -7,3 +7,10 @@ Die Anwendung basiert auf ARKit. Mithilfe der vom Framework bereitgestellten Bil
 
 ## Lizenz
 [GNU General Public License v3.0](https://github.com/htw-saar-informatik/ARRobotState/blob/master/LICENSE)
+
+---
+
+AR Robot State is an Augmented Reality application for iOS, which allows the detection of robots from the Embedded Robotoics Lab (EmRoLab) of the Saarland University of Applied Sciences (htw saar) and to show status information.
+
+The application is based on ARKit. Using the image recognition provided by the framework, robots can be identified. After identifying a robot, the status information of the robot is displayed in the camera image of the application. The status information is provided to the application via a backend. The backend is based on Firebase. Using a REST interface, the robots periodically update the status information stored in the backend. The AR application is then actively notified by the backend of the changes.
+
