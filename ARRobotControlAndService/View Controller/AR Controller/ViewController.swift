@@ -64,11 +64,12 @@ class ViewController: UIViewController{
     }
 
     @IBAction func restButtonTapped(_ sender: Any) {
-        anzeige = false
-        werte.removeAll()
         sceneView.scene.rootNode.enumerateChildNodes{(planeNode, _) in
             planeNode.removeFromParentNode()
         }
+        anzeige = false
+        //werte.removeAll()
+        
     }
     // MARK: - ARSCNViewDelegate
     
@@ -168,10 +169,32 @@ class ViewController: UIViewController{
                                                             let indexStartOFText = body.index(body.startIndex, offsetBy: 1)
                                                             let indexEndOFText = body.index(body.endIndex, offsetBy: 0)
                                                             let neuerWert = String(body[indexStartOFText..<indexEndOFText])
-                                                            self.werte.append((key: diff.document.documentID, value: neuerWert.replacingOccurrences(of: "{", with: "")))
+                                                            var vorhanden = false;
+                                                            for (key, value) in self.werte
+                                                            {
+                                                                if(key == diff.document.documentID && value == neuerWert.replacingOccurrences(of: "{", with: ""))
+                                                                {
+                                                                    vorhanden = true;
+                                                                }
+                                                            }
+                                                            if(vorhanden == false)
+                                                            {
+                                                                self.werte.append((key: diff.document.documentID, value: neuerWert.replacingOccurrences(of: "{", with: "")))
+                                                            }
                                                         }
                                                         else{
-                                                            self.werte.append((key: diff.document.documentID, value: body.replacingOccurrences(of: "{", with: "")))
+                                                            var vorhanden = false;
+                                                            for (key, value) in self.werte
+                                                            {
+                                                                if(key == diff.document.documentID && value == body.replacingOccurrences(of: "{", with: ""))
+                                                                {
+                                                                    vorhanden = true;
+                                                                }
+                                                            }
+                                                            if(vorhanden == false)
+                                                            {
+                                                                self.werte.append((key: diff.document.documentID, value: body.replacingOccurrences(of: "{", with: "")))
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -245,7 +268,7 @@ class ViewController: UIViewController{
                             let data = try JSONSerialization.data(withJSONObject: diff.document.data(), options: JSONSerialization.WritingOptions.prettyPrinted)
                             if let string = String(data: data, encoding: String.Encoding.utf8) {
                                 var i: Int = 0
-                                for (key, value) in self.werte {
+                                for (key, value) in self.userAnzeige {
                                     if key == diff.document.documentID {
                                         self.userAnzeige[i] = (key: diff.document.documentID, value: string.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "\(diff.document.documentID)", with: "").replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: ""))
                                     } else {
@@ -258,6 +281,9 @@ class ViewController: UIViewController{
                         }
                         if(self.name.isEmpty == false) {
                             self.werte.removeAll()
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                             self.checkForUpdates(imageName: self.name)
                         }
                     }
@@ -275,6 +301,9 @@ class ViewController: UIViewController{
                             print("TEST")
                             print(self.name)
                             self.werte.removeAll()
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                             self.checkForUpdates(imageName: self.name)
                         }
                     }

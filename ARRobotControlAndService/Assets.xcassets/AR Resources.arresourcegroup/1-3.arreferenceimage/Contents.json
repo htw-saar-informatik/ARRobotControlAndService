@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "IMG_0039.JPG"
+      "filename" : "IMG_0041.JPG"
     }
   ],
   "info" : {
@@ -10,6 +10,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 1
+    "width" : 0.99997999999999998
   }
 }

@@ -14,6 +14,7 @@ class Me {
     // computed property which returns the current user id
     static var uid: String {
         return Auth.auth().currentUser!.uid
+       // return ""
     }
     
     // retrieves the username for the current user object
