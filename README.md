@@ -11,7 +11,7 @@ AR Robot State is an Augmented Reality application for iOS, which shows status i
 The application is based on ARKit. Using the image recognition provided by the framework, robots can be identified. After identifying a robot, the status information of the robot is displayed in the camera image of the application. The status information is provided to the application via a backend. The backend is based on Firebase. Using a REST interface, the robots periodically update the status information stored in the backend. The AR application is then actively notified by the backend of the changes.
 
 
-![Beispielbild](Statusinformation Roboter.png)
+![Beispielbild](Roboter.png)
 *Anzeige der Statusinformationen eines identifizierten Roboters*
 
 ## Lizenz
