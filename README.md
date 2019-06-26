@@ -13,8 +13,7 @@ The application is based on ARKit. Using the image recognition provided by the f
 ## Example
 <img src="Roboter.png" alt="alt text" width="600">
 
-*Anzeige der Statusinformationen eines identifizierten Roboters  
-Displaying state inforamtion of an identified robot*
+*Displaying state inforamtion of an identified robot*
 
 ## License
 [GNU General Public License v3.0](https://github.com/htw-saar-informatik/ARRobotState/blob/master/LICENSE)
