@@ -1,13 +1,8 @@
 # AR Robot State
 
-AR Robot State ist eine Augmented Reality App die es ermöglicht einen Roboter des Embedded Robotoics Lab (EmRoLab) der Hochschule für Technik und Wirtschaft des Saarlandes (HTW Saar) über eine Bilderkennung zu identifizieren.
+AR Robot State ist eine Augmented Reality Anwendung für iOS, die es ermöglicht Roboter des Embedded Robotoics Lab (EmRoLab) der Hochschule für Technik und Wirtschaft des Saarlandes (htw saar) zu erkennen und Statusinformationen einzublenden. 
 
-Nach der Identifizierung werden die aktuell gespeicherten Statusinformationen des Roboters im Kamerabild der Anwendung angezeigt und in Echtzeit Synchronisiert.
-
-Weiterhin besteht für den Anwender die Möglichkeit sich innerhalb der Anwendung zu registrieren bzw. sich anzumelden.
-
-
-AR Robot State ist eine iOS-Anwendung auf Basis von ARKit
+Die Anwendung basiert auf ARKit. Mithilfe der vom Framework bereitgestellten Bilderkennung können Roboter identifiziert werden. Nach der Identifizierung eines Roboters werden die Statusinformationen des Roboters im Kamerabild der Anwendung eingeblendet. Die Statusinformationen werden der Anwendung über ein Backend zur Verfügung gestellt. Das Backend basiert auf Firebase. Über eine REST-Schnittstelle aktualisieren die Roboter die im Backend gespeicherten Statusinformationen periodisch. Die AR-Anwendung wird daraufhin vom Backend aktiv über die Änderungen benachrichtigt. 
 
 
 ## Lizenz
