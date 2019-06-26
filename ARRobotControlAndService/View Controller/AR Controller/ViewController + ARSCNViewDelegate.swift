@@ -34,7 +34,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
                 guard let imageAnchor = anchor as? ARImageAnchor else {return}
                 guard let currentFrame = sceneView.session.currentFrame else {return}
                 var translation = matrix_identity_float4x4
-                translation.columns.3.z = -3
+                translation.columns.3.z = -4
             
             
                 if let imageName = imageAnchor.referenceImage.name{
@@ -42,7 +42,8 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
                     
                     //loadData(imageName: imageName);
                     let array = imageName.components(separatedBy: "-")
-                    name = array[1]
+                    name = array[0]
+                    print(name)
                     checkForUpdates(imageName: name)
                 
                     let planeNode = erzeugeSCNNode.erzeugeSCNNode(imageName: name)

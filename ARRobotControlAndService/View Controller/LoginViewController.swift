@@ -154,7 +154,6 @@ class LoginViewController: UIViewController {
     
     
     private func loginUser(email: String, password: String){
-        SVProgressHUD.show(withStatus: "Anmelden..")
         AuthenticationController.loginUser(withEmail: email, password: password) { (userId) in
             if let userId = userId{
                 
